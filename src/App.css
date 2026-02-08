@@ -1,43 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
-.container {
-  width: 350px;
-  margin: 80px auto;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.input-box {
+.card {
+  background: #ffffff;
+  width: 380px;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  color: #333;
+}
+
+.subtitle {
+  text-align: center;
+  color: #777;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.input-row {
   display: flex;
   gap: 10px;
 }
 
 input {
   flex: 1;
-  padding: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #667eea;
 }
 
 button {
-  padding: 8px 12px;
+  background: #667eea;
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.task {
+  background: #f6f7fb;
+  padding: 12px 14px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  transition: background 0.2s ease;
+}
+
+.task span {
   cursor: pointer;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+.task:hover {
+  background: #eceeff;
 }
 
-li {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-.done span {
+.task.completed span {
   text-decoration: line-through;
-  color: gray;
+  color: #999;
+}
+
+.task button {
+  background: transparent;
+  color: #999;
+  font-size: 16px;
+}
+
+.task button:hover {
+  color: #ff4d4f;
+}
+
+.empty {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
 }
